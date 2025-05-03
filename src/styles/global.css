@@ -1,0 +1,77 @@
+@import url("./fonts.css");
+
+@import "tailwindcss";
+
+/* tailwind plugins */
+@plugin "@tailwindcss/forms";
+
+/* theme definition import */
+@import "./tailwind-theme.css";
+
+/* other imports into specific layers */
+@import "./markdown-content.css" layer(components);
+@import "./buttons.css" layer(components);
+
+/* https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
+@layer base {
+	:root {
+		/* default font */
+		font-family: var(--font-sans);
+	}
+
+	/* starwind preflight merged with Cosmic Themes */
+	* {
+		@apply border-base-200 outline-none;
+	}
+	*:focus-visible {
+		@apply ring-primary-700 rounded-xs ring-2 outline-none;
+	}
+	html {
+		@apply bg-base-100 text-base-900 leading-[1.6rem] scheme-light;
+		scroll-behavior: smooth;
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+	}
+	button {
+		@apply cursor-pointer;
+	}
+}
+
+@layer components {
+	.h1 {
+		@apply text-3xl font-semibold md:text-4xl lg:text-5xl;
+	}
+
+	.h2 {
+		@apply text-2xl font-semibold md:text-3xl;
+	}
+
+	.h3 {
+		@apply text-lg font-semibold md:text-xl;
+	}
+
+	.description {
+		@apply opacity-90 md:text-lg;
+	}
+
+	.site-container {
+		@apply mx-auto max-w-6xl px-4;
+	}
+}
+
+@layer utilities {
+	/* focus utility class (for when user is tabbing through items on page) */
+	.primary-focus:focus-visible {
+		@apply ring-primary-700 rounded-xs ring-2;
+	}
+
+	/* main gradient. Used for tags and some headings */
+	.main-text-gradient {
+		@apply bg-gradient-to-r from-indigo-600 to-sky-600 bg-clip-text text-transparent;
+	}
+
+	.rotate-180 {
+		@apply rotate-180;
+	}
+}

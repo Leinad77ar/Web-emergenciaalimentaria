@@ -1,0 +1,75 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+// utils
+import { formatDate, categorify } from "@js/textUtils";
+
+interface Props {
+	post: CollectionEntry<"blog">;
+	showDescription?: boolean;
+	class?: string;
+	rest?: any; // catch-all for any additional parameters, such as "aria-label"
+}
+
+const { post, showDescription = false, class: className, ...rest } = Astro.props as Props;
+const { title, description, pubDate, heroImage, categories } = post.data;
+---
+
+<a
+	href={`/blog/${post.id}/`}
+	aria-label={`Read ${title}`}
+	class=`primary-focus group flex flex-col max-w-lg md:max-w-full mx-auto p-2 border border-base-200 shadow-md rounded-lg transition-transform duration-300 hover:scale-[1.02] ${className}`
+	{...rest}
+	transition:name={`blog-${post.id}`}
+>
+	<div>
+		<div
+			class=`overflow-hidden rounded-md border border-base-100 shrink-0 justify-center sm:justify-normal`
+		>
+			<figure>
+				<Image
+					src={heroImage}
+					alt={`cover for ${title}`}
+					height={700}
+					quality="high"
+					class="h-auto max-h-96 w-full object-cover"
+					transition:name={`blog-image-${post.id}`}
+				/>
+			</figure>
+		</div>
+	</div>
+	<div class="w-full">
+		<div class="mt-1 flex w-full flex-wrap justify-between">
+			<!-- categories -->
+			<div class="flex items-center gap-3">
+				<div class="flex flex-wrap items-center gap-x-1 text-sm opacity-80">
+					<Icon name="tabler:category" class="h-4 w-4" />
+					{categories.map((category) => <div>{categorify(category)}</div>)}
+				</div>
+			</div>
+
+			<!-- published date -->
+			<div class="ml-auto text-xs opacity-70 md:text-sm">
+				<div class="flex">
+					<p class="whitespace-nowrap">
+						<time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- title -->
+		<div class="mt-1">
+			<h2
+				class="group-hover:text-primary-600 inline text-lg font-semibold transition duration-300 md:text-xl"
+			>
+				{title}
+			</h2>
+		</div>
+
+		<!-- description -->
+		{showDescription && <p class="description mt-1 text-sm">{description}</p>}
+	</div>
+</a>

@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+// data
+import siteData from "@config/siteData.json";
+
+// images
+import logo from "@images/site-logo.png";
+---
+
+<a class="primary-focus flex items-center align-middle" href="/" aria-label="Home" class="">
+	<Image
+		src={logo}
+		alt="Emergencia Alimentaria"
+		loading="eager"
+		width={140}
+		height={140}
+		class="h-[140px] w-[140px]"
+	/>
+	<div class="text-2xl font-semibold">{siteData.name}</div>
+</a>
