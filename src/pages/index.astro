@@ -7,7 +7,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 // components
 import Hero from "@components/Hero/Hero.astro";
 import Button from "@components/Button/Button.astro";
-import PostCard from "@components/PostCard/PostCard.astro";
 
 // utils
 import { getAllPosts, formatPosts } from "@js/blogUtils";
@@ -21,27 +20,27 @@ const recentPosts = formatPosts(posts, { limit: 3 });
 
 <BaseLayout title={siteData.title} description={siteData.description}>
 	<Hero />
-	<div class="site-container mt-10">
+	<div class="site-container">
 		<!-- Recent blogs -->
 		<div class="mx-auto max-w-3xl md:mt-12">
 			<h2 class="h3 text-center">ECHEMOS AL HAMBRE Y LA MALNUTRICIÓN DE LA CIUDAD</h2>
 			<hr class="bg-primary-600/50 mx-auto mt-4 max-w-[30%] rounded-full border-none pt-1" />
 			<div class="mx-auto max-w-3xl md:mt-12">
-				<p>
+				<p class="text-justify">
 					¿Sabías que 1 de cada 10 porteños no puede garantizarse un plato de comida al día?
 					<strong
 						>¿Y que muchos niños comen, pero mal, con alimentos pobres en nutrientes que no les
 						permiten crecer ni aprender como deberían?</strong
 					>
 				</p>
-				<p>
+				<p class="text-justify">
 					En la Ciudad de Buenos Aires, el 38% de la población vive en la pobreza. <strong
 						>La ciudad reparte más de 200.000 viandas escolares con enormes carencias nutricionales
 						a nuestros chicos. Esto es muy grave.
 					</strong>Sin una alimentación adecuada, no hay desarrollo posible. Ni físico, ni
 					intelectual, ni emocional.
 				</p>
-				<p>
+				<p class="text-justify">
 					<strong>TODO EMPIEZA POR LA COMIDA</strong>
 					Por eso, tenemos un plan para terminar con el hambre y la malnutrición <strong
 						>en 12 meses</strong

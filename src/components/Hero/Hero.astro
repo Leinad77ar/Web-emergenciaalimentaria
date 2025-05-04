@@ -6,12 +6,14 @@ import desktopVideo from "@images/EAwide.mp4";
 
 <section
     id="hero"
-    class="relative mb-14 flex min-h-[60svh] w-full pb-24 bg-cover bg-center"
+    class="relative flex w-full bg-cover bg-center z-[10] h-[900px] sm:h-[900px]"
 >
+
+
     <!-- Video para versión desktop -->
     <video 
         id="desktopVideo"
-        class="absolute inset-0 w-full h-full object-cover hidden sm:block"
+        class="absolute inset-0 w-full h-full hidden sm:block"
         autoplay
         playsinline
         muted
@@ -22,7 +24,7 @@ import desktopVideo from "@images/EAwide.mp4";
     <!-- Video para versión móvil -->
     <video 
         id="mobileVideo"
-        class="absolute inset-0 w-full h-full object-cover block sm:hidden"
+        class="absolute inset-0 w-full h-full block sm:hidden"
         autoplay
         playsinline
         muted
@@ -30,15 +32,6 @@ import desktopVideo from "@images/EAwide.mp4";
         <source src={mobileVideo} type="video/mp4">
     </video>
 
-    <div class="relative mx-auto flex items-center pt-16">
-        <div class="site-container mx-auto max-w-4xl gap-8 py-20 text-center md:pt-32">
-            <div class="xs:flex-row mx-auto mt-8 flex max-w-lg flex-col gap-3 px-6">
-                <!-- <Button variant="primary" href="/propuestas/" class="mx-auto">
-                    Nuestra propuesta
-                </Button> -->
-            </div>
-        </div>
-    </div>
 </section>
 
 <!-- ---
