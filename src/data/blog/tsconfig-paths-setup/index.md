@@ -1,9 +1,9 @@
 ---
 title: "Nuestras propuestas"
 description: Enable cleaner, more readable import statements with TSConfig path aliases. Learn how to set them up and improve your TypeScript code maintainability.
-
+authors: [""]
 heroImage: "./hr.jpeg"
-
+pubDate: "Jul 10 2023"
 categories: [propuestas]
 ---
 

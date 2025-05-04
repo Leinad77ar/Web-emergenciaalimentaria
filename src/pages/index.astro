@@ -24,10 +24,32 @@ const recentPosts = formatPosts(posts, { limit: 3 });
 	<div class="site-container mt-10">
 		<!-- Recent blogs -->
 		<div class="mx-auto max-w-3xl md:mt-12">
-			<h2 class="h2 text-center">Recent Blog Posts</h2>
+			<h2 class="h3 text-center">ECHEMOS AL HAMBRE Y LA MALNUTRICIÓN DE LA CIUDAD</h2>
 			<hr class="bg-primary-600/50 mx-auto mt-4 max-w-[30%] rounded-full border-none pt-1" />
+			<div class="mx-auto max-w-3xl md:mt-12">
+				<p>
+					¿Sabías que 1 de cada 10 porteños no puede garantizarse un plato de comida al día?
+					<strong
+						>¿Y que muchos niños comen, pero mal, con alimentos pobres en nutrientes que no les
+						permiten crecer ni aprender como deberían?</strong
+					>
+				</p>
+				<p>
+					En la Ciudad de Buenos Aires, el 38% de la población vive en la pobreza. <strong
+						>La ciudad reparte más de 200.000 viandas escolares con enormes carencias nutricionales
+						a nuestros chicos. Esto es muy grave.
+					</strong>Sin una alimentación adecuada, no hay desarrollo posible. Ni físico, ni
+					intelectual, ni emocional.
+				</p>
+				<p>
+					<strong>TODO EMPIEZA POR LA COMIDA</strong>
+					Por eso, tenemos un plan para terminar con el hambre y la malnutrición <strong
+						>en 12 meses</strong
+					> . No con promesas, sino con gestión y decisión política.
+				</p>
+			</div>
 			<div class="mt-8 grid gap-4 md:grid-cols-2">
-				{
+				<!-- {
 					recentPosts.map((post, idx) =>
 						// first post is large post card, don't re-show it here
 						idx === 0 ? (
@@ -38,13 +60,13 @@ const recentPosts = formatPosts(posts, { limit: 3 });
 							<PostCard post={post} showDescription={true} />
 						),
 					)
-				}
+				} -->
 			</div>
 		</div>
 
 		<!-- link to all posts -->
 		<div class="mt-12 flex justify-center">
-			<Button variant="outline" arrow="right" href="/blog/">All Posts</Button>
+			<Button variant="outline" arrow="right" href="/blog/">Conocé la propuesta</Button>
 		</div>
 	</div>
 </BaseLayout>
