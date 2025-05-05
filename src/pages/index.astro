@@ -21,7 +21,6 @@ const recentPosts = formatPosts(posts, { limit: 3 });
 <BaseLayout title={siteData.title} description={siteData.description}>
 	<Hero />
 	<div class="site-container">
-		<!-- Recent blogs -->
 		<div class="mx-auto max-w-3xl md:mt-12">
 			<h2 class="h3 text-center">ECHEMOS AL HAMBRE Y LA MALNUTRICIÓN DE LA CIUDAD</h2>
 			<hr class="bg-primary-600/50 mx-auto mt-4 max-w-[30%] rounded-full border-none pt-1" />
@@ -47,23 +46,7 @@ const recentPosts = formatPosts(posts, { limit: 3 });
 					> . No con promesas, sino con gestión y decisión política.
 				</p>
 			</div>
-			<div class="mt-8 grid gap-4 md:grid-cols-2">
-				<!-- {
-					recentPosts.map((post, idx) =>
-						// first post is large post card, don't re-show it here
-						idx === 0 ? (
-							<div class="md:col-span-2">
-								<PostCard post={post} showDescription={true} />
-							</div>
-						) : (
-							<PostCard post={post} showDescription={true} />
-						),
-					)
-				} -->
-			</div>
 		</div>
-
-		<!-- link to all posts -->
 		<div class="mt-12 flex justify-center">
 			<Button variant="outline" arrow="right" href="/propuestas/">Conocé la propuesta</Button>
 		</div>

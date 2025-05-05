@@ -18,7 +18,7 @@ const { text, link, newTab = false } = navItem;
 		class:list={[
 			`primary-focus hover:text-primary-700 relative block w-full px-4 py-2 font-medium transition ${className}`,
 			{
-				// styling for current active page link
+
 				"text-base-600": Astro.url.pathname === link,
 			},
 		]}

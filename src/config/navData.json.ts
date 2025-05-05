@@ -23,46 +23,6 @@ export type navItem = navLinkItem | navDropdownItem;
 
 // note: 1 level of dropdown is supported
 const navConfig: navItem[] = [
-	// {
-	// 	text: "Nosotros",
-	// 	link: "/blog/",
-	// },
-	// {
-		// get the categories used in blog posts, to put into a navbar dropdown
-	// 	text: "Categories",
-	// 	dropdown: processedCategories.map(([category, count]) => {
-	// 		return {
-	// 			text: humanize(category),
-	// 			link: `/categories/${category}/`,
-	// 		};
-	// 	}),
-	// },
-	// {
-	// 	text: "Pages",
-	// 	dropdown: [
-	// 		{
-	// 			text: "Categories",
-	// 			link: "/categories/",
-	// 		},
-	// 		{
-	// 			text: "Elements",
-	// 			link: "/elements/",
-	// 		},
-	// 		{
-	// 			text: "Privacy Policy",
-	// 			link: "/privacy-policy/",
-	// 		},
-	// 		{
-	// 			text: "404",
-	// 			link: "/not-a-link/",
-	// 		},
-	// 		{
-	// 			text: "RSS Feed",
-	// 			link: "/rss.xml",
-	// 			newTab: true,
-	// 		},
-	// 	],
-	// },
 	{
 		text: "Propuesta",
 		link: "/propuestas/",

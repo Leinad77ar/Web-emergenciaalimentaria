@@ -29,18 +29,16 @@ interface Props {
 					
 				</div>
 
-				<!-- desktop nav menu -->
 				<div class="flex flex-auto justify-end">
 					<nav class="hidden md:block">
 						<ul class="flex h-fit items-center px-4">
 							{
-								// if dropdown exists, setup the dropdown, otherwise it is just a link
 								navData.map((navItem) =>
 								"dropdown" in navItem ? (
-									// non-mobile dropdown menu
+									
 									<NavDropdown navItem={navItem} />
 								) : (
-									// normal nav link
+									
 									<NavLink {navItem} />
 								),
 							)
@@ -49,7 +47,6 @@ interface Props {
 						<SocialIcons />
 						</ul>
 					</nav>
-					<!-- mobile nav menu, only load on small screens where it is visible -->
 					<div class="md:hidden">
 						<MobileNav />
 					</div>
