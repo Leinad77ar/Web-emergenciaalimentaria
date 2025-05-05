@@ -121,19 +121,47 @@ export function formatPosts(
  * @param authors: authors: CollectionEntry<"blog">["data"]["authors"] - array of authors slugs from a blog post
  * use like `const authorsData = await getAllAuthorsData();`
  */
+// export async function getAllAuthorsData(
+// 	authors: CollectionEntry<"blog">["data"]["authors"],
+// ): Promise<CollectionEntry<"authors">[]> {
+// 	const authorsData = authors.map(async (author) => {
+// 		console.log("esto")
+// 		const authorData = await getEntry("authors", author.id);
+
+// 		if (authorData === undefined) {
+// 			throw new Error(`Author "${author.id}" not found in "authors" collection.`);
+// 		}
+
+// 		return authorData;
+// 	});
+
+// 	// return a promise that is resolved when all promises in the array have been resolved
+// 	return Promise.all(authorsData);
+// }
 export async function getAllAuthorsData(
-	authors: CollectionEntry<"blog">["data"]["authors"],
+    authors: CollectionEntry<"blog">["data"]["authors"],
 ): Promise<CollectionEntry<"authors">[]> {
-	const authorsData = authors.map(async (author) => {
-		const authorData = await getEntry("authors", author.id);
+    const authorsData = authors.map(async (author) => {
+        try {
+            if (!author?.id) {
+                console.warn(`Skipping author: Invalid ID`);
+                return null;
+            }
 
-		if (authorData === undefined) {
-			throw new Error(`Author "${author.id}" not found in "authors" collection.`);
-		}
+            const authorData = await getEntry("authors", author.id);
 
-		return authorData;
-	});
+            if (!authorData) {
+                console.warn(`Author "${author.id}" not found in "authors" collection.`);
+                return null;
+            }
 
-	// return a promise that is resolved when all promises in the array have been resolved
-	return Promise.all(authorsData);
+            return authorData;
+        } catch (error) {
+            console.error(`Error fetching author "${author.id}":`, error);
+            return null;
+        }
+    });
+
+    // Aquí sigue el `.map()`, pero el `Promise.all()` se usa para esperar todas las promesas antes de devolver los resultados
+    return Promise.all(authorsData).then((data) => data.filter(Boolean));
 }
