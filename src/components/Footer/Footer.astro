@@ -1,19 +1,23 @@
 ---
 // data
 import siteData from "@config/siteData.json";
-
+import SocialIcons from "@components/SocialIcons/SocialIcons.astro";
 const today = new Date();
 ---
 
 <footer class="text-base-800/70 mt-32 mb-2 text-center text-sm">
-	&copy; {today.getFullYear()} a theme by <a
-		href="https://cosmicthemes.com"
+	<div class="flex justify-center items-center mb-4">
+		<SocialIcons />
+	  </div>
+	<!-- &copy; {today.getFullYear()}  -->
+	<a
+		href="https://emergenciaalimentaria.ar"
 		class="hover:text-primary-600"
 		target="_blank"
-		rel="noopener">Cosmic Themes</a
+		rel="noopener">Emergencia Alimentaria.</a
 	>
-	<!-- {siteData.name}. All rights reserved. -->
 </footer>
+<!-- {siteData.name}. All rights reserved. -->
 
 <!-- Cosmic Themes is not affiliated with, endorsed, or sponsored by the
 Astro or Tailwind Labs teams. This website was built with Astro and Tailwind

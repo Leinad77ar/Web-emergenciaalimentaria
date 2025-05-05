@@ -115,29 +115,6 @@ export function formatPosts(
 	return filteredPosts;
 }
 
-// --------------------------------------------------------
-/**
- * * returns all authors content collection data used in a blog post, gathered from the blog post authors slugs
- * @param authors: authors: CollectionEntry<"blog">["data"]["authors"] - array of authors slugs from a blog post
- * use like `const authorsData = await getAllAuthorsData();`
- */
-// export async function getAllAuthorsData(
-// 	authors: CollectionEntry<"blog">["data"]["authors"],
-// ): Promise<CollectionEntry<"authors">[]> {
-// 	const authorsData = authors.map(async (author) => {
-// 		console.log("esto")
-// 		const authorData = await getEntry("authors", author.id);
-
-// 		if (authorData === undefined) {
-// 			throw new Error(`Author "${author.id}" not found in "authors" collection.`);
-// 		}
-
-// 		return authorData;
-// 	});
-
-// 	// return a promise that is resolved when all promises in the array have been resolved
-// 	return Promise.all(authorsData);
-// }
 export async function getAllAuthorsData(
     authors: CollectionEntry<"blog">["data"]["authors"],
 ): Promise<CollectionEntry<"authors">[]> {

@@ -23,10 +23,10 @@ export type navItem = navLinkItem | navDropdownItem;
 
 // note: 1 level of dropdown is supported
 const navConfig: navItem[] = [
-	{
-		text: "Nosotros",
-		link: "/blog/",
-	},
+	// {
+	// 	text: "Nosotros",
+	// 	link: "/blog/",
+	// },
 	// {
 		// get the categories used in blog posts, to put into a navbar dropdown
 	// 	text: "Categories",
@@ -64,7 +64,7 @@ const navConfig: navItem[] = [
 	// 	],
 	// },
 	{
-		text: "Propuestas",
+		text: "Propuesta",
 		link: "/propuestas/",
 	},
 ];
